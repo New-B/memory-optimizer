@@ -32,7 +32,7 @@ all: $(OBJS)
 
 sys-refs: sys-refs.cc $(SYS_REFS_SOURCE_FILES) $(SYS_REFS_HEADER_FILES)
 	bash get_version.sh
-	$(CXX) $< $(SYS_REFS_SOURCE_FILES) -o $@ $(CXXFLAGS) -lnuma -pthread -lyaml-cpp
+	$(CXX) $< $(SYS_REFS_SOURCE_FILES) -o $@ $(CXXFLAGS) -lnuma -pthread -I/GPUFS/nsccgz_yfdu_16/wb/programs/yaml-cpp-0.6.0/include -L/GPUFS/nsccgz_yfdu_16/wb/programs/yaml-cpp-0.6.0/lib -lyaml-cpp
 
 page-refs: page-refs.c $(LIB_SOURCE_FILES)
 	$(CC) $< $(LIB_SOURCE_FILES) -o $@ $(CFLAGS)
